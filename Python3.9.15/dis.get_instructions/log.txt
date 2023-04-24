@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/root/fuzzVuls/Python3.9.15/dis.get_instructions/1#dis#get_instructions.py", line 20, in <module>
+    dc.demoFunc(x)
+  File "/root/fuzzVuls/Python3.9.15/dis.get_instructions/1#dis#get_instructions.py", line 14, in demoFunc
+    ret = dis.get_instructions(arg)
+  File "/root/anaconda3/lib/python3.9/dis.py", line 272, in get_instructions
+    co = _get_code_object(x)
+  File "/root/anaconda3/lib/python3.9/dis.py", line 144, in _get_code_object
+    x = _try_compile(x, "<disassembly>")
+  File "/root/anaconda3/lib/python3.9/dis.py", line 38, in _try_compile
+    c = compile(source, name, 'eval')
+MemoryError
