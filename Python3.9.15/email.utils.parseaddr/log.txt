@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/root/fuzzVuls/Python3.9.15/email.utils.parseaddr/1#email#utils#parseaddr.py", line 20, in <module>
+    dc.demoFunc(addr)
+  File "/root/fuzzVuls/Python3.9.15/email.utils.parseaddr/1#email#utils#parseaddr.py", line 13, in demoFunc
+    ret = email.utils.parseaddr(arg)
+  File "/root/anaconda3/lib/python3.9/email/utils.py", line 212, in parseaddr
+    addrs = _AddressList(addr).addresslist
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 513, in __init__
+    self.addresslist = self.getaddrlist()
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 257, in getaddrlist
+    ad = self.getaddress()
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 300, in getaddress
+    returnlist = returnlist + self.getaddress()
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 300, in getaddress
+    returnlist = returnlist + self.getaddress()
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 300, in getaddress
+    returnlist = returnlist + self.getaddress()
+  [Previous line repeated 989 more times]
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 267, in getaddress
+    self.gotonext()
+  File "/root/anaconda3/lib/python3.9/email/_parseaddr.py", line 239, in gotonext
+    while self.pos < len(self.field):
+RecursionError: maximum recursion depth exceeded while calling a Python object
