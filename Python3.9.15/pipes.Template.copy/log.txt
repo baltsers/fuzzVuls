@@ -1,0 +1,86 @@
+(gdb) bt
+#0  0x00007fd5964c4337 in __GI___waitpid (pid=2092, stat_loc=stat_loc@entry=0x7ffd352f4e28,
+    options=options@entry=0) at ../sysdeps/unix/sysv/linux/waitpid.c:30
+#1  0x00007fd59642f047 in do_system (line=line@entry=0x7fd593037050 "cat >'xv#m%HHHxJn'")
+    at ../sysdeps/posix/system.c:149
+#2  0x00007fd59642f42a in __libc_system (line=line@entry=0x7fd593037050 "cat >'xv#m%HHHxJn'")
+    at ../sysdeps/posix/system.c:185
+#3  0x000000000061407e in os_system_impl (module=<optimized out>, command=<optimized out>)
+    at ./Modules/posixmodule.c:4835
+#4  os_system (module=<optimized out>, args=<optimized out>, nargs=<optimized out>,
+    kwnames=<optimized out>) at ./Modules/clinic/posixmodule.c.h:1839
+#5  0x00000000006facfd in cfunction_vectorcall_FASTCALL_KEYWORDS (func=<optimized out>,
+    args=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at Objects/methodobject.c:446
+#6  0x00000000005635fe in _PyObject_VectorcallTstate (tstate=0x6120000004c0, callable=0x7fd597f03540,
+    args=0x7fd59307fae0, nargsf=9223372036854775809, kwnames=0x0) at ./Include/cpython/abstract.h:118
+#7  PyObject_Vectorcall (callable=0x7fd597f03540, args=0x7fd59307fae0, nargsf=9223372036854775809,
+    kwnames=0x0) at ./Include/cpython/abstract.h:127
+#8  call_function (tstate=<optimized out>, pp_stack=0x7ffd352f5140, oparg=<optimized out>,
+    kwnames=<optimized out>) at Python/ceval.c:5077
+#9  0x000000000055d8c0 in _PyEval_EvalFrameDefault (tstate=0x6120000004c0, f=<optimized out>,
+    throwflag=<optimized out>) at Python/ceval.c:3489
+#10 0x0000000000433370 in _PyEval_EvalFrame (tstate=0x6120000004c0, f=0x7fd59307f950, throwflag=0)
+    at ./Include/internal/pycore_ceval.h:40
+#11 function_code_fastcall (tstate=0x6120000004c0, co=<optimized out>, args=<optimized out>,
+    nargs=<optimized out>, globals=<optimized out>) at Objects/call.c:330
+#12 0x00000000005635fe in _PyObject_VectorcallTstate (tstate=0x6120000004c0, callable=0x7fd593033c10,
+    args=0x61600007dc28, nargsf=9223372036854775811, kwnames=0x0) at ./Include/cpython/abstract.h:118
+#13 PyObject_Vectorcall (callable=0x7fd593033c10, args=0x61600007dc28, nargsf=9223372036854775811,
+    kwnames=0x0) at ./Include/cpython/abstract.h:127
+#14 call_function (tstate=<optimized out>, pp_stack=0x7ffd352f5390, oparg=<optimized out>,
+    kwnames=<optimized out>) at Python/ceval.c:5077
+---Type <return> to continue, or q <return> to quit---
+#15 0x000000000055d898 in _PyEval_EvalFrameDefault (tstate=0x6120000004c0, f=<optimized out>,
+    throwflag=<optimized out>) at Python/ceval.c:3506
+#16 0x0000000000433370 in _PyEval_EvalFrame (tstate=0x6120000004c0, f=0x61600007da90, throwflag=0)
+    at ./Include/internal/pycore_ceval.h:40
+#17 function_code_fastcall (tstate=0x6120000004c0, co=<optimized out>, args=<optimized out>,
+    nargs=<optimized out>, globals=<optimized out>) at Objects/call.c:330
+#18 0x00000000005635fe in _PyObject_VectorcallTstate (tstate=0x6120000004c0, callable=0x7fd597f180d0,
+    args=0x7fd597e9b758, nargsf=9223372036854775810, kwnames=0x0) at ./Include/cpython/abstract.h:118
+#19 PyObject_Vectorcall (callable=0x7fd597f180d0, args=0x7fd597e9b758, nargsf=9223372036854775810,
+    kwnames=0x0) at ./Include/cpython/abstract.h:127
+#20 call_function (tstate=<optimized out>, pp_stack=0x7ffd352f55b0, oparg=<optimized out>,
+    kwnames=<optimized out>) at Python/ceval.c:5077
+#21 0x000000000055d96f in _PyEval_EvalFrameDefault (tstate=0x6120000004c0, f=<optimized out>,
+    throwflag=<optimized out>) at Python/ceval.c:3520
+#22 0x0000000000565265 in _PyEval_EvalFrame (tstate=0x6120000004c0, f=0x7fd597e9b5e0, throwflag=0)
+    at ./Include/internal/pycore_ceval.h:40
+#23 _PyEval_EvalCode (tstate=<optimized out>, _co=<optimized out>, globals=<optimized out>,
+    locals=<optimized out>, args=<optimized out>, argcount=<optimized out>, kwnames=<optimized out>,
+    kwargs=<optimized out>, kwcount=0, kwstep=<optimized out>, defs=<optimized out>,
+    defcount=<optimized out>, kwdefs=<optimized out>, closure=<optimized out>, name=<optimized out>,
+    qualname=<optimized out>) at Python/ceval.c:4329
+#24 0x0000000000554062 in _PyEval_EvalCodeWithName (_co=0x7ffd352f4e28, globals=0x0,
+    locals=0x7fd5964c4337 <__GI___waitpid+23>, args=0x0, argcount=0, kwnames=0x0, kwargs=0x0, kwcount=0,
+    kwstep=2, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0, name=0x0, qualname=0x0)
+    at Python/ceval.c:4361
+#25 PyEval_EvalCodeEx (_co=0x7ffd352f4e28, globals=0x0, locals=0x7fd5964c4337 <__GI___waitpid+23>,
+    args=0x0, argcount=0, kws=0x0, kwcount=0, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0)
+    at Python/ceval.c:4377
+#26 PyEval_EvalCode (co=0x7ffd352f4e28, globals=0x0, locals=0x7fd5964c4337 <__GI___waitpid+23>)
+    at Python/ceval.c:828
+---Type <return> to continue, or q <return> to quit---
+#27 0x00000000005d2368 in run_eval_code_obj (tstate=0x6120000004c0, co=0x7fd5932da2f0,
+    globals=0x7fd597ec9e00, locals=0x7fd597ec9e00) at Python/pythonrun.c:1221
+#28 run_mod (mod=<optimized out>, filename=<optimized out>, globals=0x7fd597ec9e00,
+    locals=0x7fd597ec9e00, flags=<optimized out>, arena=0x7fd597f28970) at Python/pythonrun.c:1242
+#29 pyrun_file (fp=<optimized out>, filename=<optimized out>, start=<optimized out>,
+    globals=<optimized out>, locals=<optimized out>, closeit=<optimized out>, flags=<optimized out>)
+    at Python/pythonrun.c:1140
+#30 0x00000000005cedc7 in pyrun_simple_file (fp=0x616000066c80, filename=0x7fd597e702b0,
+    closeit=<optimized out>, flags=0xfffffffffffffe00) at Python/pythonrun.c:450
+#31 PyRun_SimpleFileExFlags (fp=<optimized out>, filename=<optimized out>, closeit=<optimized out>,
+    flags=<optimized out>) at Python/pythonrun.c:483
+#32 0x00000000005ce68d in PyRun_AnyFileExFlags (fp=<optimized out>, filename=<optimized out>,
+    closeit=<optimized out>, flags=<optimized out>) at Python/pythonrun.c:92
+#33 0x000000000041e1fe in pymain_run_file (config=0x6220000004d0, cf=0x7ffd352f5978)
+    at Modules/main.c:373
+#34 pymain_run_python (exitcode=0x7ffd352f5994) at Modules/main.c:598
+#35 Py_RunMain () at Modules/main.c:677
+#36 0x000000000041ea67 in pymain_main (args=<optimized out>) at Modules/main.c:707
+#37 0x000000000041ead3 in Py_BytesMain (argc=<optimized out>, argv=0x7ffd352f4e28) at Modules/main.c:731
+#38 0x00007fd596401c87 in __libc_start_main (main=0x41d540 <main>, argc=2, argv=0x7ffd352f5d08,
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffd352f5cf8)
+    at ../csu/libc-start.c:310
+#39 0x000000000041d47a in _start ()
