@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/root/fuzzVuls/Python3.9.15/pyclbr.readmodule_ex/1#pyclbr#readmodule_ex.py", line 24, in <module>
+    dc.demoFunc(module, path)
+  File "/root/fuzzVuls/Python3.9.15/pyclbr.readmodule_ex/1#pyclbr#readmodule_ex.py", line 16, in demoFunc
+    ret = pyclbr.readmodule_ex(arg1,arg2)
+  File "/root/anaconda3/lib/python3.9/pyclbr.py", line 116, in readmodule_ex
+    return _readmodule(module, path or [])
+  File "/root/anaconda3/lib/python3.9/pyclbr.py", line 149, in _readmodule
+    parent = _readmodule(package, path, inpackage)
+  File "/root/anaconda3/lib/python3.9/pyclbr.py", line 149, in _readmodule
+    parent = _readmodule(package, path, inpackage)
+  File "/root/anaconda3/lib/python3.9/pyclbr.py", line 149, in _readmodule
+    parent = _readmodule(package, path, inpackage)
+  [Previous line repeated 993 more times]
+  File "/root/anaconda3/lib/python3.9/pyclbr.py", line 140, in _readmodule
+    if module in sys.builtin_module_names and inpackage is None:
+RecursionError: maximum recursion depth exceeded in comparison
